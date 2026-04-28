@@ -45,6 +45,13 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
+  let newArr = [];
+
+  arr.forEach(word => {
+    newArr.push(word.toUpperCase());
+  });
+
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -56,15 +63,19 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
-
-const greeting = (word) => {
-  // Solution code here...
+const greeting = (str) => {
+  return str.toUpperCase() + "!";
 };
 
-const speaker = (words, callback) => {
-  // Solution code here...
-};
+const speaker = (arr, callback) => {
+  let newArr = [];
 
+  arr.forEach(word => {
+    newArr.push(callback(word));
+  });
+
+  return newArr;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -82,13 +93,16 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
-};
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
 
+  return arr;
+};
 /* ------------------------------------------------------------------------------------------------
 
 CHALLENGE 6
