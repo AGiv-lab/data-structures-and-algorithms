@@ -103,7 +103,7 @@ const addNumbers = (num, arr, times, callback) => {
 
   return arr;
 };
-/* ------------------------------------------------------------------------------------------------
+
 
 CHALLENGE 6
 
@@ -122,10 +122,16 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
-};
+  let groceryList = [];
 
-/* ------------------------------------------------------------------------------------------------
+  availableItems.forEach(item => {
+    if (item.available) {
+      groceryList.push(item.name);
+    }
+  });
+
+  return groceryList;
+};------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
 
 Write a function named fizzbuzz that takes in an array of numbers.
