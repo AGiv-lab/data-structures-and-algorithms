@@ -25,9 +25,8 @@ let starWarsPeople = [
 ];
 
 const sortStarWarsCharacters = (starWarsArr) => {
-  // Solution code here...
+  return starWarsArr.sort((a, b) => b.height - a.height);
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -35,9 +34,9 @@ Write a function named removeThree that takes an index and an array. The functio
 ------------------------------------------------------------------------------------------------ */
 
 const removeThree = (idx, arr) => {
-  // Solution code here...
+  arr.splice(idx, 3);
+  return arr;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -45,9 +44,8 @@ Write a function named joinArray that takes an array and joins all of the elemen
 ------------------------------------------------------------------------------------------------ */
 
 const joinArray = (arr) => {
-  // Solution code here...
+  return arr.join(' ');
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -63,7 +61,9 @@ For example, if the input is 'Welcome', the output will be:
 
 const howMuchPencil = (str) => {
   let result = [];
-  // Solution code here...
+ for (let i = 0; i <= str.length; i++) {
+    result.push(str.slice(i));
+  }
   return result;
 };
 
@@ -75,10 +75,9 @@ Write a function name wordsToCharList that, given a string as input, returns a n
 For example, wordsToCharList('gregor') returns ['g','r','e','g','o','r'].
 ------------------------------------------------------------------------------------------------ */
 
-const wordsToCharList = (arr) => {
-  // Solution code here...
+const wordsToCharList = (str) => {
+  return str.split('');
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -123,7 +122,15 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let item = recipe.ingredients[i];
+
+    let firstSpace = item.indexOf(' ');
+    let secondSpace = item.indexOf(' ', firstSpace + 1);
+
+    result.push(item.slice(secondSpace + 1));
+  }
   return result;
 };
 
@@ -137,10 +144,15 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  for (let i = 0; i < recipe.ingredients.length; i++) {
+    let words = recipe.ingredients[i].split(' ');
+
+    result.push(words.slice(2).join(' '));
+  }
+
   return result;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
 
@@ -153,7 +165,13 @@ Return a new array containing just the verbs. For example, ['Mix until evenly di
 
 const stepActions = (recipe) => {
   let result = [];
-  // Solution code here...
+  for (let i = 0; i < recipe.steps.length; i++) {
+    let step = recipe.steps[i];
+
+    let firstSpace = step.indexOf(' ');
+
+    result.push(step.slice(0, firstSpace));
+  }
   return result;
 };
 
@@ -169,11 +187,13 @@ For example:
   removeEvenValues(integers);
   console.log(integers) will print [1, 3, 5]
 ------------------------------------------------------------------------------------------------ */
-
 const removeEvenValues = (arr) => {
-  // Solution code here...
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] % 2 === 0) {
+      arr.splice(i, 1);
+    }
+  }
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
 
@@ -288,20 +308,20 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return a list of foods', () => {
     expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return a list of recipe steps', () => {
     expect(stepActions(gruffaloCrumble)).toStrictEqual(['Pre-heat', 'De-prickle', 'Sprinkle', 'Mix', 'Grease', 'Combine', 'Fold', 'Spread', 'Bake']);
     expect(stepActions(gruffaloCrumble).length).toStrictEqual(9);
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove the even numbers from the array', () => {
     let list = [1, 2, 3, 4, 5, 6];
     removeEvenValues(list);
