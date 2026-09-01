@@ -20,3 +20,5 @@ To run your tests
 - run `npm test ##` to only run tests for challenge ## (i.e. 01)
 
 ### 401 Data Structures, Code Challenges
+
+- [Code Challenge 2: Array Insert Shift](./javascript/401/cc2-array-insert-shift.md)
