@@ -32,7 +32,9 @@ Output:
 
 ## Whiteboard Process
 
-<!-- Add the Array Insert Shift whiteboard image here when it is available. -->
+![Array Insert Shift Whiteboard](./img/array-insert-shift.png)
+
+[Figma Whiteboard](https://www.figma.com/board/g8QsVEDy1ECvbQWQy31Qna/array-insert-shift?node-id=0-1&t=KMc7RloWCfZujxv7-1)
 
 ## Approach & Efficiency
 
