@@ -1,5 +1,6 @@
 # Data Structures and Algorithms
 
+
 See [setup instructions](https://codefellows.github.io/setup-guide/code-301/2-code-challenges), in the Code 301 Setup Guide.
 
 ## Repository Quick Tour and Usage
@@ -21,3 +22,4 @@ To run your tests
 ### 401 Data Structures, Code Challenges
 
 - [Code Challenge 1: Reverse Array](./javascript/401/cc1-reverse-array.md)
+- [Code Challenge 2: Array Insert Shift](./javascript/401/cc2-array-insert-shift.md)
