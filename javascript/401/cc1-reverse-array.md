@@ -1,9 +1,7 @@
-<!-- 401 Whiteboard Process -->
+# Code Challenge 1: Reverse an Array
 
-# Challenge Title
-<--Reverse an Array -->
+## Challenge / Description
 
-## Whiteboard Process
 Write a function called `reverseArray` that accepts an array as an argument and returns an array containing the same elements in reverse order.
 
 Do not use built-in array methods such as `reverse()`.
@@ -14,40 +12,38 @@ Do not use built-in array methods such as `reverse()`.
 
 ```js
 [1, 2, 3, 4]
+```
 
-![Whiteboard Process ](img/)
+**Output:**
+
+```js
+[4, 3, 2, 1]
+```
+
+## Whiteboard Process
+
+![Code Challenge 1 reverse array whiteboard](./img/array-rev.png)
+
+[Figma whiteboard](https://www.figma.com/board/8nkh7lSBvRvcGbnmWtEuIX/Array-Reverse-Whiteboard?node-id=0-1&t=yL3XS4sVvqs7b6uZ-1)
 
 ## Approach & Efficiency
-<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 
+Start at the final index of the input array and move backward toward index 0.
 
-### **Approach Explanation**
+During each loop iteration, copy the current element into a new output array. When the loop reaches the beginning of the input array, return the completed output array.
 
-*Start at the final index of the input array and move backward toward index 0.
+This approach does not use the built-in `reverse()` method and does not modify the original input array.
 
-**During each loop iteration, copy the current element into a new output array. When the loop reaches the beginning of the input array, return the completed output array.**
-
-*This approach does not use the built-in reverse() method and does not modify the original input array.*
-
-
-**The Big-O**
-
-
-*Time Complexity:* O(n)
-Every element in the input array is visited once.
-
-*Space Complexity:*O(n)
-A new array is created containing the same number of elements as the input array.
+- **Time complexity:** O(n) because every element in the input array is visited once.
+- **Space complexity:** O(n) because a new array is created containing the same number of elements as the input array.
 
 ## Solution
-<!-- Show how to run your code, and examples of it in action -->
+
 The completed algorithm, pseudocode, JavaScript function, and example walkthrough are shown in the whiteboard above.
 
-<## Solution
 The function should produce results such as:
 
-*-javascript*
-
+```js
 reverseArray([1, 2, 3, 4]);
 // [4, 3, 2, 1]
 
@@ -56,18 +52,4 @@ reverseArray(["a", "b", "c"]);
 
 reverseArray([]);
 // []
-
-![Array Reverse whiteboard](./array-reverse-whiteboard.png) -->
-
-- [ ] Top-level README “Table of Contents” is updated
-- [ ] README for this challenge is complete
-       - [ ] Summary, Description, Approach & Efficiency, Solution
-       - [ ] Picture of whiteboard
-       - [ ] Link to code
-- [ ] Feature tasks for this challenge are completed
-- [ ] Unit tests written and passing
-       - [ ] “Happy Path” - Expected outcome
-       - [ ] Expected failure
-       - [ ] Edge Case (if applicable/obvious)
-
-<!----------------------------------------------------------------------------->
+```

@@ -21,4 +21,5 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
+- [Code Challenge 1: Reverse Array](./javascript/401/cc1-reverse-array.md)
 - [Code Challenge 2: Array Insert Shift](./javascript/401/cc2-array-insert-shift.md)
