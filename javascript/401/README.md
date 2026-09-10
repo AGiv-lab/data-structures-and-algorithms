@@ -4,3 +4,4 @@
 - [Code Challenge 2: Array Insert Shift](./cc2-array-insert-shift.md)
 - [Code Challenge 3: Array Binary Search](./cc3-array-binary-search.md)
 - [Code Challenge 5: Linked List](./cc5-linked-list.md)
+- [Code Challenge 6: Linked List Insertions](./cc6-linked-list-insertions.md)
