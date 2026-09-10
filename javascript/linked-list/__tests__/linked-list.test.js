@@ -94,4 +94,111 @@ describe('Linked List', () => {
     expect(list.includes(undefined)).toBe(true);
     expect(list.includes('0')).toBe(false);
   });
+    it('successfully adds a node to the end of the linked list', () => {
+    const list = new LinkedList();
+    list.insert('a');
+    list.append('b');
+
+    expect(list.head.value).toBe('a');
+    expect(list.head.next.value).toBe('b');
+    expect(list.head.next.next).toBeNull();
+  });
+
+  it('successfully adds multiple nodes to the end of the linked list', () => {
+    const list = new LinkedList();
+    list.append('a');
+    list.append('b');
+    list.append('c');
+
+    expect(list.head.value).toBe('a');
+    expect(list.head.next.value).toBe('b');
+    expect(list.head.next.next.value).toBe('c');
+    expect(list.head.next.next.next).toBeNull();
+  });
+
+  it('successfully inserts a node before a node in the middle', () => {
+    const list = new LinkedList();
+    list.append('a');
+    list.append('c');
+    list.append('d');
+
+    list.insertBefore('c', 'b');
+
+    expect(list.toString()).toBe('{ a } -> { b } -> { c } -> { d } -> NULL');
+  });
+
+  it('successfully inserts a node before the first node', () => {
+    const list = new LinkedList();
+    list.append('b');
+    list.append('c');
+    const originalHead = list.head;
+
+    list.insertBefore('b', 'a');
+
+    expect(list.head.value).toBe('a');
+    expect(list.head.next).toBe(originalHead);
+    expect(list.toString()).toBe('{ a } -> { b } -> { c } -> NULL');
+  });
+
+  it('throws Value not found when the insertBefore target does not exist', () => {
+    const list = new LinkedList();
+    list.append('a');
+    list.append('b');
+
+    expect(() => list.insertBefore('missing', 'c')).toThrow(new Error('Value not found'));
+    expect(list.toString()).toBe('{ a } -> { b } -> NULL');
+  });
+
+  it('inserts before only the first matching node with duplicate target values', () => {
+    const list = new LinkedList();
+    list.append('a');
+    list.append('c');
+    list.append('c');
+
+    list.insertBefore('c', 'b');
+
+    expect(list.toString()).toBe('{ a } -> { b } -> { c } -> { c } -> NULL');
+  });
+
+  it('successfully inserts a node after a node in the middle', () => {
+    const list = new LinkedList();
+    list.append('a');
+    list.append('b');
+    list.append('d');
+
+    list.insertAfter('b', 'c');
+
+    expect(list.toString()).toBe('{ a } -> { b } -> { c } -> { d } -> NULL');
+  });
+
+  it('successfully inserts a node after the last node', () => {
+    const list = new LinkedList();
+    list.append('a');
+    list.append('b');
+
+    list.insertAfter('b', 'c');
+
+    expect(list.toString()).toBe('{ a } -> { b } -> { c } -> NULL');
+    expect(list.head.next.next.next).toBeNull();
+  });
+
+  it('throws Value not found when the insertAfter target does not exist', () => {
+    const list = new LinkedList();
+    list.append('a');
+    list.append('b');
+
+    expect(() => list.insertAfter('missing', 'c')).toThrow(new Error('Value not found'));
+    expect(list.toString()).toBe('{ a } -> { b } -> NULL');
+  });
+
+  it('inserts after only the first matching node with duplicate target values', () => {
+    const list = new LinkedList();
+    list.append('a');
+    list.append('b');
+    list.append('b');
+
+    list.insertAfter('b', 'c');
+
+    expect(list.toString()).toBe('{ a } -> { b } -> { c } -> { b } -> NULL');
+  });
 });
