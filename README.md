@@ -23,3 +23,4 @@ To run your tests
 - [Code Challenge 1: Reverse Array](./javascript/401/cc1-reverse-array.md)
 - [Code Challenge 2: Array Insert Shift](./javascript/401/cc2-array-insert-shift.md)
 - [Code Challenge 3: Array Binary Search](./javascript/401/cc3-array-binary-search.md)
+- [Code Challenge 5: Linked List](./javascript/401/cc5-linked-list.md)
