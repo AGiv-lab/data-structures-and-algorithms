@@ -5,3 +5,4 @@
 - [Code Challenge 3: Array Binary Search](./cc3-array-binary-search.md)
 - [Code Challenge 5: Linked List](./cc5-linked-list.md)
 - [Code Challenge 6: Linked List Insertions](./cc6-linked-list-insertions.md)
+- [Code Challenge 18: FizzBuzz Tree](./cc18-tree-fizz-buzz.md)
